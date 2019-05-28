@@ -1,5 +1,6 @@
 # Ignore all these pycharm folders
 /.idea/
+**/__pycache__
 
 # Ignore python venv folder
 /venv/

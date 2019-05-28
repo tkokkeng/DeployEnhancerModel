@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Enhancer Identification{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Model Ensemble of Recurrent Neural Networks for Enhancer Identification</h1>
+    <p>Please enter below the sequence data in FASTA for enhancer identification :</p>
+    <p>e.g.<br />
+        >chr12_6444939_6445147 (query sequence 1)<br />
+        GAGCAGGAGGCCAGTCACCCTGAGTC ... (length must be 200 characters)<br />
+        >chr1:23777770-23777970_ (query sequence 2)<br />
+        TCACAATAGCTCCTTTGGTGGTCTCG  ... (length must be 200 characters)<br />
+        ...
+    </p>
+</div>
+{{ wtf.quick_form(form) }}
+{% if results %}
+<hr>
+<div class="container">
+    <h5><b>Results</b></h5>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Layer 1</th>
+                <th scope="col">Layer 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for a_row in results %}
+            <tr>
+                <th scope="row">{{ a_row[0] }}</th>
+                <td>{{ a_row[1] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
+{% endblock %}

@@ -19,5 +19,4 @@ Open a web browser and enter the following url : localhost:5000
 
 You should see the following window.
 
-![Image browser window]
-(https://github.com/tkokkeng/DeployEnhancerModel/blob/master/images/Screenshot%20from%202019-05-28%2018-55-20.png)
+![Image browser window](https://github.com/tkokkeng/DeployEnhancerModel/blob/master/images/Screenshot%20from%202019-05-28%2018-55-20.png)

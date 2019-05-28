@@ -11,12 +11,15 @@ from sklearn.preprocessing import MinMaxScaler
 def preprocess_seq(seq_string):
 
     err = None
-    seq = seq_string.split()
+    seq = seq_string.split('\r\n')
+    seq = list(filter(None, seq))
 
     if len(seq) > 0 and len(seq) % 2 == 0:
         seq = [ seq[i] for i in range(1, len(seq), 2) ]
     else:
         err = 'Invalid data format!'
+
+    # print(seq)
 
     # Validate input
     # Check if length = 200
